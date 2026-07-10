@@ -1,44 +1,72 @@
 from extractor import extractor, text
 from graph.graph import Graph
 import json
+from validator import Validator
 
 
 extracted_Data= extractor(text)
 data = json.loads(extracted_Data)
 
-graph = Graph()
-graph_nodes = {}
-    
-# Add entities to the graph
-for entity in data.get("entities", []):
-    node_name = entity["name"]
-    node_type = entity["type"]
-    graph_nodes[node_name] = graph.add_node(node_name, node_type)
+validator = Validator(data)
 
-#Adding relationships to the graph
-for rel in data.get("relationships", []):
-    start_node_name = rel["entity_name1"]
-    end_node_name = rel["entity_name2"]
-    rel_type = rel["relationship_type"]
-    confidence_score = rel.get("confidence_score", 1.0)  # Default confidence score to 1.0 if not provided
+report = validator.validate()
 
-    # graph.add_relationship(start_node_name, end_node_name, rel_type, confidence_score)
-    # print(f"Added relationship: {start_node_name} --({rel_type})--> {end_node_name} with confidence score {confidence_score}")
+report.print_report()
 
-    try:
-        graph.add_relationship(
-            start_node_name,
-            end_node_name,
-            rel_type,
-            confidence_score
-        )
-        print(f"✓ Added: {start_node_name} --{rel_type}--> {end_node_name}")
+if report.passed:
+    print("yay! All validations passed. Proceeding to graph construction...")
+    graph = Graph()
+    graph_nodes = {}
+        
+    # Add entities to the graph
+    for entity in data.get("entities", []):
+        node_name = entity["name"]
+        node_type = entity["type"]
+        graph_nodes[node_name] = graph.add_node(node_name, node_type)
 
-    except ValueError as e:
-        print(f"✗ Failed: {start_node_name} --{rel_type}--> {end_node_name}")
-        print(e)
+    #Adding relationships to the graph
+    for rel in data.get("relationships", []):
+        start_node_name = rel["entity_name1"]
+        end_node_name = rel["entity_name2"]
+        rel_type = rel["relationship_type"]
+        confidence_score = rel.get("confidence_score", 1.0)  # Default confidence score to 1.0 if not provided
 
-# Display the graph
-graph.display_graph()
+        # graph.add_relationship(start_node_name, end_node_name, rel_type, confidence_score)
+        # print(f"Added relationship: {start_node_name} --({rel_type})--> {end_node_name} with confidence score {confidence_score}")
 
+        try:
+            graph.add_relationship(
+                start_node_name,
+                end_node_name,
+                rel_type,
+                confidence_score
+            )
+            print(f"✓ Added: {start_node_name} --{rel_type}--> {end_node_name}")
+
+        except ValueError as e:
+            print(f"✗ Failed: {start_node_name} --{rel_type}--> {end_node_name}")
+            print(e)
+
+    for ev in data.get("events", []):
+        event_name = ev["event_name"]
+        event_type = ev["type"]
+        subject = ev.get("subject", "UNKNOWN")
+        description = ev.get("description", "")
+        confidence_score = ev.get("confidence_score", 1.0)
+
+        # Add the event as a node
+        graph.add_node(event_name, event_type)
+
+        # Create a relationship between the event and its subject
+        if subject in graph_nodes:
+            graph.add_relationship(subject, event_name, "TRIGGERS", confidence_score)
+            print(f"✓ Added: {subject} --TRIGGERS--> {event_name}")
+        else:
+            print(f"✗ Failed: Subject '{subject}' for event '{event_name}' does not exist in the graph.")
+
+    # Display the graph
+    graph.display_graph()
+
+else:
+    print("Stop Graph Construction")
 

@@ -11,7 +11,6 @@ ENTITY_TYPES = [
     "Tool",
     "Benchmark",
     "Person",
-    "Organization",
     "Programming Language"
 ]
 

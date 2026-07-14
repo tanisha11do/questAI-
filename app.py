@@ -1,11 +1,15 @@
 from extractor import extractor, text
 from graph.graph import Graph
 import json
+from graph.normalizer import Normalizer
+import os
 from validator import Validator
-
 
 extracted_Data= extractor(text)
 data = json.loads(extracted_Data)
+
+normalizer = Normalizer(data)
+data = normalizer.normalize()
 
 validator = Validator(data)
 
@@ -15,56 +19,39 @@ report.print_report()
 
 if report.passed:
     print("yay! All validations passed. Proceeding to graph construction...")
-    graph = Graph()
-    graph_nodes = {}
         
     # Add entities to the graph
-    for entity in data.get("entities", []):
-        node_name = entity["name"]
-        node_type = entity["type"]
-        graph_nodes[node_name] = graph.add_node(node_name, node_type)
-
-    #Adding relationships to the graph
-    for rel in data.get("relationships", []):
-        start_node_name = rel["entity_name1"]
-        end_node_name = rel["entity_name2"]
-        rel_type = rel["relationship_type"]
-        confidence_score = rel.get("confidence_score", 1.0)  # Default confidence score to 1.0 if not provided
-
-        # graph.add_relationship(start_node_name, end_node_name, rel_type, confidence_score)
-        # print(f"Added relationship: {start_node_name} --({rel_type})--> {end_node_name} with confidence score {confidence_score}")
-
-        try:
-            graph.add_relationship(
-                start_node_name,
-                end_node_name,
-                rel_type,
-                confidence_score
-            )
-            print(f"✓ Added: {start_node_name} --{rel_type}--> {end_node_name}")
-
-        except ValueError as e:
-            print(f"✗ Failed: {start_node_name} --{rel_type}--> {end_node_name}")
-            print(e)
-
-    for ev in data.get("events", []):
-        event_name = ev["event_name"]
-        event_type = ev["type"]
-        subject = ev.get("subject", "UNKNOWN")
-        description = ev.get("description", "")
-        confidence_score = ev.get("confidence_score", 1.0)
-
-        # Add the event as a node
-        graph.add_node(event_name, event_type)
-
-        # Create a relationship between the event and its subject
-        if subject in graph_nodes:
-            graph.add_relationship(subject, event_name, "TRIGGERS", confidence_score)
-            print(f"✓ Added: {subject} --TRIGGERS--> {event_name}")
-        else:
-            print(f"✗ Failed: Subject '{subject}' for event '{event_name}' does not exist in the graph.")
-
+    
     # Display the graph
+    # graph.display_graph()
+    # node_name_to_find = input("Enter the node name to find: ")
+    # graph.find_node(node_name_to_find)
+
+    # node_neighbours_to_find = input("Enter the node name to find neighbours for: ")
+    # graph.find_neighbours(node_neighbours_to_find)
+
+    # entity_type_to_find = input("Enter the entity type to find: ")
+    # graph.find_by_type(entity_type_to_find)
+
+    # relationship_type_to_find = input("Enter the relationship type to find: ")
+    # graph.find_relationship(relationship_type_to_find)
+
+    # path_to_find = input("Enter the starting node name for path finding: ")
+    # target_node_name = input("Enter the target node name for path finding: ")
+    # graph.find_path(path_to_find, target_node_name)
+
+    file = "graph.json"
+    if os.path.exists(file):
+        graph = Graph.load(file)
+    else:
+        graph = Graph()
+
+    graph.build_from_json(data)
+
+    graph.save(file)
+
+    # graph = Graph.load("graph.json")
+
     graph.display_graph()
 
 else:

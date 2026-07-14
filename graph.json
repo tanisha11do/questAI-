@@ -1,0 +1,394 @@
+{
+    "nodes": [
+        {
+            "id": "23e819d2-35a7-408c-9970-036bf5279706",
+            "name": "NVIDIA",
+            "entity_type": "Company",
+            "properties": {}
+        },
+        {
+            "id": "c177c322-c6cf-45de-b844-dbf4a48979e1",
+            "name": "Dynamo",
+            "entity_type": "Product",
+            "properties": {}
+        },
+        {
+            "id": "9fbc73d3-6e1d-4913-9749-02007da616b8",
+            "name": "TensorRT-LLM",
+            "entity_type": "Product",
+            "properties": {}
+        },
+        {
+            "id": "a677f45c-7416-4e2b-837c-f9fe7a673121",
+            "name": "NVIDIA Triton Inference Server",
+            "entity_type": "Product",
+            "properties": {}
+        },
+        {
+            "id": "8895ea05-2095-437f-81ac-cf32c070363a",
+            "name": "vLLM",
+            "entity_type": "Framework",
+            "properties": {}
+        },
+        {
+            "id": "5db0d040-9e2b-4700-9851-8b941a20773f",
+            "name": "PyTorch",
+            "entity_type": "Framework",
+            "properties": {}
+        },
+        {
+            "id": "4c501f1c-2609-4d43-80dd-7622c719e38b",
+            "name": "Hugging Face",
+            "entity_type": "Company",
+            "properties": {}
+        },
+        {
+            "id": "e4da3cf0-eff4-4387-a6c7-85882f62047e",
+            "name": "NVIDIA AI Enterprise",
+            "entity_type": "Cloud Service",
+            "properties": {}
+        },
+        {
+            "id": "6368047e-24b7-4ab4-9545-20b2cbdff633",
+            "name": "Dynamo Product Release",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "NVIDIA announced Dynamo, a new AI inference platform.",
+                "confidence": 1.0
+            }
+        },
+        {
+            "id": "86a215d6-adf8-4823-9a1a-d9e9e48ce967",
+            "name": "Hugging Face Collaboration",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "PARTNERSHIP",
+                "description": "NVIDIA highlighted collaborations with Hugging Face to integrate Dynamo into ML workflows.",
+                "confidence": 1.0
+            }
+        },
+        {
+            "id": "1be67311-38a0-47e0-bc46-99a5665f526f",
+            "name": "Throughput Benchmark",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "Dynamo can improve inference throughput by up to 30% compared to previous pipelines.",
+                "confidence": 1.0
+            }
+        },
+        {
+            "id": "6646b0ba-33c2-4d38-87d6-19f822da8e91",
+            "name": "NVIDIA announces Dynamo",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "NVIDIA announced Dynamo, a new AI inference platform for optimizing LLM deployment across GPU clusters.",
+                "confidence": 0.95
+            }
+        },
+        {
+            "id": "543d35e0-478c-4e37-b39e-9b8ca6b26378",
+            "name": "Dynamo integration with TensorRT-LLM and Triton",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "Dynamo integrates with TensorRT-LLM and NVIDIA Triton Inference Server for faster inference and better resource utilization.",
+                "confidence": 0.9
+            }
+        },
+        {
+            "id": "034549f0-10ba-45d8-b683-d96e4e0a27a2",
+            "name": "NVIDIA collaborates with Hugging Face",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "PARTNERSHIP",
+                "description": "NVIDIA highlighted collaborations with Hugging Face to integrate Dynamo into existing ML workflows.",
+                "confidence": 0.85
+            }
+        },
+        {
+            "id": "7c98830b-64af-409d-911d-e5eb30cb8901",
+            "name": "Dynamo available through NVIDIA AI Enterprise",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "Dynamo will be available through NVIDIA AI Enterprise later this year.",
+                "confidence": 0.8
+            }
+        },
+        {
+            "id": "c3438396-e853-489b-ac0e-a8a4b19523ab",
+            "name": "Anthropic",
+            "entity_type": "Company",
+            "properties": {}
+        },
+        {
+            "id": "de26df0e-b2dd-419c-a29b-58631558a5f0",
+            "name": "Claude Code Studio",
+            "entity_type": "Product",
+            "properties": {}
+        },
+        {
+            "id": "f687c842-9f1f-40dc-a70a-c5a7577a8379",
+            "name": "GitHub",
+            "entity_type": "Tool",
+            "properties": {}
+        },
+        {
+            "id": "ecf35fd4-41e4-418a-b87f-4cb82557cde4",
+            "name": "VS Code",
+            "entity_type": "Tool",
+            "properties": {}
+        },
+        {
+            "id": "897062b8-f00a-40c9-9f49-1dd283969c30",
+            "name": "JetBrains IDEs",
+            "entity_type": "Tool",
+            "properties": {}
+        },
+        {
+            "id": "9a29defc-6689-4b1e-b1de-37fed747f47e",
+            "name": "Claude Opus 4",
+            "entity_type": "UNKNOWN",
+            "properties": {}
+        },
+        {
+            "id": "120771d7-a8a8-4989-be50-ffe3336023ff",
+            "name": "Model Context Protocol (MCP)",
+            "entity_type": "Framework",
+            "properties": {}
+        },
+        {
+            "id": "6286b8d9-fb8d-4ece-91da-da88a8f909e5",
+            "name": "Atlassian",
+            "entity_type": "Company",
+            "properties": {}
+        },
+        {
+            "id": "889393d4-ed88-4d94-bbb4-59c5d7e2f7f5",
+            "name": "Anthropic Enterprise",
+            "entity_type": "Cloud Service",
+            "properties": {}
+        },
+        {
+            "id": "cc7b2bc7-3c03-48c2-8aa7-0c360d969e27",
+            "name": "Claude Code Studio Launch",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "Anthropic introduced Claude Code Studio, an AI-assisted development environment for software engineers.",
+                "confidence": 0.95
+            }
+        },
+        {
+            "id": "846fe55c-69a5-4d0c-b53c-ee13064c56f2",
+            "name": "Anthropic-Atlassian Partnership",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "PARTNERSHIP",
+                "description": "Anthropic announced a strategic collaboration with Atlassian for AI-powered code review and documentation generation.",
+                "confidence": 0.95
+            }
+        },
+        {
+            "id": "25bb0f35-f3ae-4450-b061-dd3d77a941f1",
+            "name": "New Security Controls Introduction",
+            "entity_type": "Event",
+            "properties": {
+                "event_type": "UNKNOWN",
+                "description": "Anthropic introduced new security controls including permission-based tool access, audit logging, and enterprise authentication.",
+                "confidence": 0.85
+            }
+        }
+    ],
+    "relationships": [
+        {
+            "source": "NVIDIA",
+            "target": "Dynamo",
+            "relationship_type": "ANNOUNCES",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "Dynamo",
+            "target": "TensorRT-LLM",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "Dynamo",
+            "target": "NVIDIA Triton Inference Server",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "Dynamo",
+            "target": "vLLM",
+            "relationship_type": "SUPPORTS",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "Dynamo",
+            "target": "PyTorch",
+            "relationship_type": "SUPPORTS",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "NVIDIA",
+            "target": "Hugging Face",
+            "relationship_type": "PARTNERS_WITH",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "Dynamo",
+            "target": "NVIDIA AI Enterprise",
+            "relationship_type": "AVAILABLE_THROUGH",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "NVIDIA",
+            "target": "Dynamo Product Release",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "NVIDIA",
+            "target": "Hugging Face Collaboration",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "Dynamo",
+            "target": "Throughput Benchmark",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 1.0
+        },
+        {
+            "source": "NVIDIA",
+            "target": "Dynamo",
+            "relationship_type": "ANNOUNCES",
+            "confidence_score": 0.95
+        },
+        {
+            "source": "Dynamo",
+            "target": "TensorRT-LLM",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Dynamo",
+            "target": "NVIDIA Triton Inference Server",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Dynamo",
+            "target": "vLLM",
+            "relationship_type": "SUPPORTS",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "Dynamo",
+            "target": "PyTorch",
+            "relationship_type": "SUPPORTS",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "NVIDIA",
+            "target": "Hugging Face",
+            "relationship_type": "PARTNERS_WITH",
+            "confidence_score": 0.8
+        },
+        {
+            "source": "Dynamo",
+            "target": "NVIDIA AI Enterprise",
+            "relationship_type": "AVAILABLE_THROUGH",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "NVIDIA",
+            "target": "NVIDIA announces Dynamo",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "Dynamo",
+            "target": "Dynamo integration with TensorRT-LLM and Triton",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "NVIDIA",
+            "target": "NVIDIA collaborates with Hugging Face",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "Dynamo",
+            "target": "Dynamo available through NVIDIA AI Enterprise",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.85
+        },
+        {
+            "source": "Anthropic",
+            "target": "Claude Code Studio",
+            "relationship_type": "INTRODUCES",
+            "confidence_score": 0.95
+        },
+        {
+            "source": "Anthropic",
+            "target": "Atlassian",
+            "relationship_type": "PARTNERS_WITH",
+            "confidence_score": 0.95
+        },
+        {
+            "source": "Claude Code Studio",
+            "target": "GitHub",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Claude Code Studio",
+            "target": "VS Code",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Claude Code Studio",
+            "target": "JetBrains IDEs",
+            "relationship_type": "INTEGRATES_WITH",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Claude Code Studio",
+            "target": "Claude Opus 4",
+            "relationship_type": "USES",
+            "confidence_score": 0.95
+        },
+        {
+            "source": "Claude Code Studio",
+            "target": "Model Context Protocol (MCP)",
+            "relationship_type": "SUPPORTS",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Anthropic",
+            "target": "Claude Code Studio Launch",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Anthropic",
+            "target": "Anthropic-Atlassian Partnership",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.9
+        },
+        {
+            "source": "Anthropic",
+            "target": "New Security Controls Introduction",
+            "relationship_type": "TRIGGERS",
+            "confidence_score": 0.9
+        }
+    ]
+}
